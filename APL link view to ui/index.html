@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API Data Display</title>
+  <style>
+    .user-card, .box {
+      border: 1px solid #ccc;
+      padding: 16px;
+      margin: 10px;
+      border-radius: 8px;
+    }
+    .green {
+      color: green;
+    }
+    .red {
+      color: red;
+    }
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Users Data</h1>
+  <div id="user-container"></div>
+
+  <h1>Products Data</h1>
+  <div id="container"></div>
+
+  <script>
+    // Users API
+    async function fetchUsers() {
+      try {
+        let response = await fetch("https://jsonplaceholder.typicode.com/users");
+        let users = await response.json();
+        displayUsers(users);
+      } catch (error) {
+        console.error("Error fetching users:", error);
+      }
+    }
+
+    function displayUsers(users) {
+      let container = document.getElementById("user-container");
+      container.innerHTML = "";
+
+      users.forEach(user => {
+        let userCard = document.createElement("div");
+        userCard.classList.add("user-card");
+        userCard.innerHTML = `
+          <h3>${user.name}</h3>
+          <p><strong>Email:</strong> ${user.email}</p>
+          <p><strong>Phone:</strong> ${user.phone}</p>
+          <p><strong>Company:</strong> ${user.company.name}</p>
+        `;
+        container.appendChild(userCard);
+      });
+    }
+
+    // Products API
+    async function fetchProducts() {
+      try {
+        let response = await fetch("https://fakestoreapi.com/products");
+        let data = await response.json();
+        displayProducts(data);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    }
+
+    function displayProducts(data) {
+      let temp = "";
+      for (let i = 0; i < data.length; i++) {
+        temp += `<div class="box">
+          <img src=${data[i].image} alt="${data[i].title}" class="img"/>
+          <h3>${data[i].title}</h3>
+          <p>Price: $${data[i].price}</p>
+          <p class=${data[i].rating.rate > 3 ? "green" : "red"}>Rating: ${
+            data[i].rating.rate
+          }</p>
+          <button>Buy</button>
+        </div>`;
+      }
+      document.getElementById("container").innerHTML = temp;
+    }
+
+    // API Call
+    fetchUsers();
+    fetchProducts();
+  </script>
+</body>
+</html>
