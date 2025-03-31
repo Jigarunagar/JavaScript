@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <style></style>
+    <a href="./index.html"><button>signup</button></a>
+    <br>
+    <br>
+    <form id="login">
+        <label for="email">email</label>
+        <input type="email" id="email" name="email" required />
+        <label for="password">Password:</label>
+        <input type="text" id="password" name="password" required />
+        <input type="submit" value="enter" />
+    </form>
+</body>
+<script>
+
+
+    let usersdata = JSON.parse(localStorage.getItem("users")) || [];
+
+    const isExists = (email) => {
+        let isUser = usersdata.find((user) => user.email === email);
+
+        if (isUser) {
+            return { found: true, user: isUser };
+        } else {
+            return { found: false, user: isUser };
+        }
+    };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        let user = {
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
+        };
+        let userData = isExists(user.email);
+        if (userData.found) {
+            if (userData.user.password == user.password) {
+                alert("login success");
+            }
+        } else {
+            alert("invalid email");
+        }
+    };
+
+    document.getElementById("login").addEventListener("submit", handleSubmit);
+</script>
+
+</html>
