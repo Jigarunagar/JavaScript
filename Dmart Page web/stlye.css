@@ -271,6 +271,103 @@ header p a {
 .widgetContainerthree img:hover {
     transform: scale(1.02);
 }
+/*  */
+/* card  */
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.box {
+    width: 250px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.box:hover {
+    transform: translateY(-10px);
+}
+
+.box img {
+    width: 50%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+.box h5 {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.pricetag {
+    font-size: 18px;
+    font-weight: bold;
+    color: #106c21;
+    margin: 8px 0;
+}
+
+.pricetag span {
+    text-decoration: line-through;
+    font-size: 14px;
+    color: rgb(134, 8, 8);
+    margin-left: 5px;
+}
+
+.stars i {
+    color: gold;
+    font-size: 14px;
+}
+
+.icons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+.icons a {
+    background: rgb(2, 115, 21);
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    padding: 6px;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.icons a:hover {
+    background: red;
+    color: white;
+    transform: scale(1.1);
+}
+
+.btnone {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    padding: 8px 12px;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btnone:hover {
+    background: #218838;
+}
 
 /* footer  */
 .footer-section {
