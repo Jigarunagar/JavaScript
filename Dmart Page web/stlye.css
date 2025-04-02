@@ -132,7 +132,7 @@ header p a {
 
 .carousel-btn {
     position: absolute;
-    top: 50%;
+    top: 55%;
     transform: translateY(-50%);
     background-color: #fff;
     color: rgb(57, 240, 16);
