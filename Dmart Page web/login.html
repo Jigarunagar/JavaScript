@@ -1,0 +1,90 @@
+<html lang="em">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-sacale=1.0">
+    <title>Dmart login</title>
+    <link rel="stylesheet" href="./login signup.css">
+    <link rel="shortcut icon" href="./imagelogo/DMART.NS-6f885d00.12.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <img src="./imagelogo/images-removebg-preview.png" alt="">
+        <nav class="navigation">
+            <a href="./index.html">home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <div class="wrapper">
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form id="login">
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="email" id="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" id="password" required>
+                    <label>password </label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">forgot password?</a>
+                </div>
+                <button type="submit" class="btn"><b>Login</b></button>
+                <div class="login-register">
+                    <p>Don't have an account?
+                        <a href="./signup.html" class="register-link">Register</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+
+        const isExists = (email) => {
+            let isUser = users.find((user) => user.email === email);
+
+            if (isUser) {
+                return { found: true, user: isUser };
+            } else {
+                return { found: false, user: isUser };
+            }
+        };
+        const handleSubmit = (e) => {
+            e.preventDefault();
+            let user = {
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value,
+            };
+            let userData = isExists(user.email);
+            if (userData.found) {
+                if (userData.user.password == user.password) {
+                    alert("Login Success");
+                    window.location.href = "index.html"
+                } else {
+                    alert("Password Does Not Match");
+                }
+            } else {
+                alert("Invalid Email");
+            }
+        };
+
+        document.getElementById("login").addEventListener("submit", handleSubmit);
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
