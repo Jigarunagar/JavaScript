@@ -83,6 +83,62 @@ let productset = [
         price: 99,
         image: "https://cdn.dmart.in/images/products/FEB120004073xx5FEB23_5_P.jpg",
     },
+    {
+        id: 13,
+        title: "Et-Mi Falooda Mix Kesar Flavour : 200 gms",
+        mrp: 80,
+        price: 40,
+        image: "https://cdn.dmart.in/images/products/LREADYMIX200gmEt-M14xx060520211125_5_P.jpg",
+    },
+    {
+        id: 14,
+        title: "Mom's Choice Falooda Mix - Butterscotch : 200 gm",
+        mrp: 80,
+        price: 30,
+        image: "https://cdn.dmart.in/images/products/MAR120006947xx7MAR24_5_P.jpg",
+    },
+    {
+        id: 15,
+        title: "Mom's Choice Falooda Mix - Kesar Pista : 200 gm",
+        mrp: 80,
+        price: 45,
+        image: "https://cdn.dmart.in/images/products/MAR120006944xx7MAR24_5_P.jpg",
+    },
+    {
+        id: 16,
+        title: "Gits Snack Mix Handvo : 500 gms",
+        mrp: 130,
+        price: 119,
+        image: "https://cdn.dmart.in/images/products/OCT120004333xx31OCT21_5_P.jpg",
+    },
+    {
+        id: 17,
+        title: "Mom's Choice Falooda Mix - Strawberry : 200 gm",
+        mrp: 80,
+        price: 35,
+        image: "https://cdn.dmart.in/images/products/MAR120006946xx7MAR24_5_P.jpg",
+    },
+    {
+        id: 18,
+        title: "Mom's Choice Falooda Mix - Vanilla : 200 gm",
+        mrp: 80,
+        price: 40,
+        image: "https://cdn.dmart.in/images/products/MAR120006948xx7MAR24_5_P.jpg",
+    },
+    {
+        id: 19,
+        title: "Pillsbury Rich Choco Oven Cake Mix : 285 gms",
+        mrp: 245,
+        price: 122,
+        image: "https://cdn.dmart.in/images/products/KREADYMIX331gmPLSB9XX130618_4_P.jpg",
+    },
+    {
+        id: 20,
+        title: "Act II Golden Sizzle Popcorn : 30 gms",
+        mrp: 30,
+        price: 19,
+        image: "https://cdn.dmart.in/images/products/MAY120000292xx1MAY24_5_P.jpg",
+    },
 ];
 //////////////////////////
 const uiMaker = (productset) => {
