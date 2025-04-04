@@ -139,6 +139,34 @@ let productset = [
         price: 19,
         image: "https://cdn.dmart.in/images/products/MAY120000292xx1MAY24_5_P.jpg",
     },
+    {
+        id: 21,
+        title: "Lijjat Udad Papad : 200 gms",
+        mrp: 71,
+        price: 69,
+        image: "https://cdn.dmart.in/images/products/DEC120000302xx11DEC21_5_P.jpg",
+    },
+    {
+        id: 22,
+        title: "Lijjat Udad Papad : 250 gms",
+        mrp: 96,
+        price: 84,
+        image: "https://cdn.dmart.in/images/products/JUN120002399xx19JUN2022_5_P.jpg",
+    },
+    {
+        id: 23,
+        title: "Mother's Recipe Potato Papad : 70 gms",
+        mrp: 34,
+        price: 24,
+        image: "https://cdn.dmart.in/images/products/KPAPADS70gmMoth6xx300421_5_P.jpg",
+    },
+    {
+        id: 24,
+        title: "Haldiram's Udad Papad: 200 gms",
+        mrp: 85,
+        price: 42,
+        image: "https://cdn.dmart.in/images/products/LPAPADS200gmHald20xx030521_5_P.jpg",
+    },
 ];
 //////////////////////////
 const uiMaker = (productset) => {
