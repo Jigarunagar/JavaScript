@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    #productdata {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    #productdata div {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+
+    #productdata div:hover {
+      transform: translateY(-5px);
+    }
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    p:last-of-type {
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="productdata"></div>
+
+  <script>
+    const apiUrl = 'https://fakestoreapi.com/products';
+
+    const getData = async () => {
+      try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        uiMaker(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    const uiMaker = (products) => {
+      document.getElementById("productdata").innerHTML = "";
+
+      products.map((product, index) => {
+        let title = document.createElement("h1");
+        title.innerHTML = " Name : " + product.title;
+
+        let price = document.createElement("p");
+        price.innerHTML = "Price: $" + product.price;
+
+        let img = document.createElement("img");
+        img.src = product.image;
+
+        let category = document.createElement("p");
+        category.innerHTML = "Category: " + product.category;
+
+        let description = document.createElement("p");
+        description.innerHTML = "description" + product.description;
+
+        let rating = document.createElement("h3");
+        rating.innerHTML = "reting :" + product.rating.count;
+
+        let div = document.createElement("div");
+        div.append(img, title, price, category, description, rating);
+
+        document.getElementById("productdata").append(div);
+      });
+    };
+    getData();
+  </script>
+</body>
+
+</html>
