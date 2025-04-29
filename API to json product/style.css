@@ -1,0 +1,77 @@
+/* Reset default spacing */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+div {
+  text-align: center;
+  margin-top: 20px;
+}
+
+input[type="search"] {
+  padding: 8px;
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: #2a1671;
+  color: white;
+  cursor: pointer;
+}
+
+button {
+  padding: 8px 12px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3b2c8e;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: #218838;
+}
+
+#productdata {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+#productdata div {
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+#productdata div:hover {
+  transform: scale(1.03);
+}
+
+#productdata img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+h3,
+h4,
+h5 {
+  margin: 10px 0 5px 0;
+  color: #333;
+}
