@@ -5,8 +5,8 @@ const Author = document.getElementById("author");
 const btn = document.getElementById("nextcolor");
 
 const get = () => {
-  const randomIndex = Math.floor(Math.random() * object.length);
-  return object[randomIndex];
+  const random = Math.floor(Math.random() * object.length);
+  return object[random];
 };
 
 const Background = () => {
