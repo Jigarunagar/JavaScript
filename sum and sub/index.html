@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <input type="number" id="valueOfA" />
+    <input type="number" id="valueOfB" />
+    <button onclick="test()">Sum</button>
+    <button onclick="sub()">Sub</button>
+    <h1 id="result"></h1>
+  </body>
+  <script>
+    function test() {
+      let a = document.getElementById("valueOfA").value;
+      let b = document.getElementById("valueOfB").value;
+      document.getElementById(
+        "result"
+      ).innerHTML = `result : a : ${a} b : ${b} ${Number(a) + Number(b)} `;
+    }
+    function sub() {
+      let a = document.getElementById("valueOfA").value;
+      let b = document.getElementById("valueOfB").value;
+      document.getElementById(
+        "result"
+      ).innerHTML = `result : a : ${a} b : ${b} ${Number(a) - Number(b)} `;
+    }
+  </script>
+  <script src="/class object.js/class.js"></script>
+</html>

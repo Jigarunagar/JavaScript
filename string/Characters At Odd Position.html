@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Odd Positions</title>
+</head>
+
+<body>
+
+    <h2>Enter a word:</h2>
+    <input type="text" id="userInput" placeholder="Type here">
+    <button onclick="showOdd()">Show Odd</button>
+
+    <h3>Output:</h3>
+    <p id="output"></p>
+
+    <script>
+        function showOdd() {
+            let inputText = document.getElementById("userInput").value;
+            let result = "";
+
+            for (let i = 0; i < inputText.length; i++) {
+            if (i % 2 === 0) {
+                result +=inputText[i];
+            }
+            }
+
+            document.getElementById("output").innerHTML = result;
+        }
+    </script>
+
+</body>
+
+</html>

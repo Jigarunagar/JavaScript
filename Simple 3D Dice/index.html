@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Dice Game</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="d-flex flex-column align-items-center justify-content-center vh-100">
+
+    <h1 class="text-center mb-4">🎲 Simple 3D Dice Game 🎲</h1>
+    <br><br>
+
+    <div class="dice-container">
+        <div class="dice" id="dice">
+            <div class="face front">1</div>
+            <div class="face back">2</div>
+            <div class="face right">3</div>
+            <div class="face left">4</div>
+            <div class="face top">5</div>
+            <div class="face bottom">6</div>
+        </div>
+    </div>
+    <br><br>
+    <button class="btn btn-primary mt-4" onclick="rollDice()">🎲 Roll the Dice</button>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

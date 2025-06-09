@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News24</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .news-header {
+            background-color: #002855;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 10%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fbc02d;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #fbc02d;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="news-header">
+        <div class="logo">News 24 </div>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <form id="newsfrom">
+        <input type="text" id="title" placeholder="Product Title" />
+        <input type="time" id="Time" placeholder="Time" />
+        <input type="url" id="img" placeholder="Image URL" />
+        <select id="category">
+            <option value="">Select Category</option>
+            <option value="politics">politics</option>
+            <option value="technology">technology</option>
+            <option value="business">business</option>
+        </select>
+        <input type="submit" value="Add new" />
+    </form>
+
+    <script>
+        const getValue = (id) => {
+            return document.getElementById(id).value;
+        };
+
+        const handleSubmit = (e) => {
+            e.preventDefault();
+
+            let newsobject = {
+                title: getValue("title"),
+                Time: getValue("Time"),
+                img: getValue("img"),
+                category: getValue("category"),
+            };
+            let products = JSON.parse(localStorage.getItem("products")) || [];
+            products.push(newsobject);
+
+            localStorage.setItem("products", JSON.stringify(products));
+        };
+        document.getElementById("newsfrom").addEventListener("submit", handleSubmit);
+    </script>
+</body>
+</html>

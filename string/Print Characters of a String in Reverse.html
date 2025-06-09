@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Characters</title>
+</head>
+
+<body>
+    <h2>Enter a word:</h2>
+    <input type="text" id="userInput" placeholder="Type here...">
+    <button onclick="reverseString()">Reverse Characters</button>
+    <h3>Output:</h3>
+    <p id="output"></p>
+    <script>
+        function reverseString() {
+            let inputText = document.getElementById("userInput").value;
+            let reversedText = inputText.split("").reverse().join("");
+            let result = reversedText.split("").join("<br>");
+            document.getElementById("output").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

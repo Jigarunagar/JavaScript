@@ -1,0 +1,66 @@
+#NewsList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+#NewsList img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+}
+
+#NewsList div {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease;
+}
+
+#NewsList div:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+p {
+    font-size: 1rem;
+    color: #666;
+}
+
+button {
+    background-color: #ff4b5c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e43f51;
+}
+
+input,
+select {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"],
+button {
+    background-color: #002855;
+    color: white;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #002855;
+}

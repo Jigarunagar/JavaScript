@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>web</title>
+</head>
+
+<body>
+    <h2>Electricity Bill</h2>
+    <input type="number" id="value">
+    <button onclick="showBill()">click</button>
+    <p id="result"></p>
+
+    <script>
+        function showBill() {
+            let one = document.getElementById("value").value;
+            let fee = 100;
+
+            if (one > 150) {
+                fee += (one - 150) * 20;
+                one = 150;
+            }
+            if (one > 100) {
+                fee += (one - 100) * 15;
+                one = 100;
+            }
+            if (one > 50) {
+                fee += (one - 50) * 10;
+                one = 50;
+            }
+            fee += one * 5;
+
+            document.getElementById("result").innerText = fee;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lowercase to Uppercase</title>
+</head>
+<body>
+
+    <h2>Enter a lowercase word:</h2>
+    <input type="text" id="userInput" placeholder="Type here...">
+    <button onclick="convertToUpper()">Convert</button>
+
+    <h3>Output: <span id="output"></span></h3>
+
+    <script>
+        function convertToUpper() {
+            let inputText = document.getElementById("userInput").value;
+            let upperText = inputText.toUpperCase(); 
+            document.getElementById("output").innerText = upperText;
+        }
+    </script> 
+
+</body>
+</html>

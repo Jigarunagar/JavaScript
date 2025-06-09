@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        h1 { font-size: 3rem; }
+        button { font-size: 1.5rem; padding: 10px 20px; margin: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h1>Counter: <span id="counter">0</span></h1>
+    <button onclick="increase()">Increase</button>
+    <button onclick="decrease()">Decrease</button>
+    <button onclick="reset()">Reset</button>
+
+    <script>
+       
+        let count = localStorage.getItem("counter") ? parseInt(localStorage.getItem("counter")) : 0;
+        document.getElementById("counter").textContent = count;
+
+        function updateCounter() {
+            document.getElementById("counter").textContent = count;
+            localStorage.setItem("counter", count); 
+        }
+
+        function increase() {
+            count++;
+            updateCounter();
+        }
+
+        function decrease() {
+            if (count > 0) {
+                count--;
+                updateCounter();
+            }
+        }
+
+        function reset() {
+            count = 0;
+            updateCounter();
+        }
+    </script>
+
+</body>
+</html>

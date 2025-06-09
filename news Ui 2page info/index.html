@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .news-header {
+            background-color: #002855;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 10%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fbc02d;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #fbc02d;
+        }
+    </style>
+</head>
+<body>
+    <header class="news-header">
+        <div class="logo">News 24 </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="./submitfrom.html">next</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <h1 align="center">News 24</h1>
+    <br>
+    <button id="sortAsc">Sort Low to High</button>
+    <button id="sortDesc">Sort High to Low</button>
+
+    <button id="filterpolitics">Filter politics</button>
+    <button id="filtertechnology">Filter technology</button>
+    <button id="filterbusiness">Filter business</button>
+    <button id="filterAll">Show All</button>
+
+
+    <input type="text" id="searchBox" placeholder="Search by title" />
+
+    <div id="NewsList"></div>
+    <br>
+
+    <script>
+        const getValue = (id) => {
+            return document.getElementById(id).value;
+        };
+
+        const uiMaker = (newsadd) => {
+            const NewsList = document.getElementById("NewsList");
+            NewsList.innerHTML = "";
+
+            if (newsadd.length === 0) {
+                NewsList.innerHTML = "";
+                return;
+            }
+            
+            newsadd.map((news, index) => {
+                let title = document.createElement("h2");
+                title.innerHTML =  `Name : ${news.title}`;
+
+                let Time = document.createElement("p");
+                Time.innerHTML = ` Time : ${news.Time}`;
+
+                let img = document.createElement("img");
+                img.src = news.img;
+
+                let category = document.createElement("p");
+                category.innerHTML = `Category: ${news.category}`;
+
+                let deleteBtn = document.createElement("button");
+                deleteBtn.innerHTML = "Delete";
+                deleteBtn.addEventListener("click", () => {
+                    products.splice(index, 1);
+                    uiMaker(products);
+                    localStorage.setItem("products", JSON.stringify(products));
+                });
+                let div = document.createElement("div");
+                div.append(img, title, Time, category, deleteBtn);
+                NewsList.append(div);
+            });
+        };
+
+        const sortProducts = (order) => {
+            let temp = [...products];
+            temp.sort((a, b) => {
+                const timeA = new Date(`1970-01-01T${a.Time}`);
+                const timeB = new Date(`1970-01-01T${b.Time}`);
+
+                if (order === "asc") {
+                    return timeA - timeB;
+                } else if (order === "desc") {
+                    return timeB - timeA;
+                }
+            });
+            uiMaker(temp);
+        };
+
+        const filterCategory = (category) => {
+            let filteredProducts = [];
+            if (category === "All") {
+                filteredProducts = products;
+            } else {
+                filteredProducts = products.filter(news => news.category === category);
+            }
+            uiMaker(filteredProducts);
+        };
+
+        const searchProducts = (searchTerm) => {
+            const filteredProducts = products.filter(news => news.title.toLowerCase().includes(searchTerm.toLowerCase()));
+            uiMaker(filteredProducts);
+        };
+
+        const products = JSON.parse(localStorage.getItem("products")) || [];
+
+        document.getElementById("sortAsc").addEventListener("click", () => sortProducts("asc"));
+        document.getElementById("sortDesc").addEventListener("click", () => sortProducts("desc"));
+
+        document.getElementById("filterpolitics").addEventListener("click", () => filterCategory("politics"));
+        document.getElementById("filtertechnology").addEventListener("click", () => filterCategory("technology"));
+        document.getElementById("filterbusiness").addEventListener("click", () => filterCategory("business"));
+        document.getElementById("filterAll").addEventListener("click", () => filterCategory("All"));
+
+        document.getElementById("searchBox").addEventListener("input", (e) => {
+            searchProducts(e.target.value);
+        });
+
+        uiMaker(products);
+    </script>
+</body>
+
+</html>

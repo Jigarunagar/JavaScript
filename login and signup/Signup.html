@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        a button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        a button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="signup">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required />
+        <label for="email">email</label>
+        <input type="email" id="email" required />
+        <label for="password">Password:</label>
+        <input type="text" id="password" required />
+        <input type="submit" value="enter" />
+    </form>
+     &nbsp;&nbsp;&nbsp;&nbsp;<a href="./indexone.html"><button>login</button></a>
+</body>
+<script>
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        let valueuser = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
+        };
+        if (findemail(valueuser.email)) {
+            alert("copy user");
+            return;
+        } else {
+            usersdata.push(valueuser);
+            localStorage.setItem("users", JSON.stringify(usersdata));
+        }
+    };
+
+    let usersdata = JSON.parse(localStorage.getItem("users")) || [];
+    const findemail = (email) => {
+        let emailvalue = usersdata.find((valueuser) => valueuser.email === email);
+        if (emailvalue) {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
+    document.getElementById("signup").addEventListener("submit", handleSubmit);
+
+</script>
+
+</html>

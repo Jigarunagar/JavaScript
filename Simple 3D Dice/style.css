@@ -1,0 +1,38 @@
+body {
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.dice-container {
+    width: 100px;
+    height: 100px;
+    perspective: 600px;
+}
+
+.dice {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.face {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background: white;
+    border: 2px solid black;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.front  { transform: translateZ(50px); }
+.back   { transform: rotateY(180deg) translateZ(50px); }
+.right  { transform: rotateY(90deg) translateZ(50px); }
+.left   { transform: rotateY(-90deg) translateZ(50px); }
+.top    { transform: rotateX(90deg) translateZ(50px); }
+.bottom { transform: rotateX(-90deg) translateZ(50px); }

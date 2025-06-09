@@ -1,0 +1,55 @@
+✅ Basic Topics
+Variables and Data Types (let, const, var, Number, String, Boolean, Object, Array)
+Operators (Arithmetic, Comparison, Logical, Bitwise)
+Conditional Statements (if-else, switch)
+Loops (for, while, do-while, forEach, map)
+Functions (Normal, Arrow Functions, Callback Functions)
+Events (onclick, onmouseover, onkeydown)
+String Methods (slice(), substring(), replace(), toUpperCase())
+Array Methods (push(), pop(), shift(), unshift(), map(), filter(), reduce())
+Date and Time (Date() Object)
+Math Object (Math.random(), Math.floor(), Math.max())
+✅ Intermediate Topics
+DOM Manipulation (Document Object Model)
+Event Handling (addEventListener)
+LocalStorage and SessionStorage
+JSON (JavaScript Object Notation)
+Error Handling (try, catch, finally, throw)
+Promises and Async/Await
+Fetch API and Axios
+Callback Functions and Callback Hell
+Regular Expressions (RegEx)
+Destructuring and Spread Operator
+✅ Advanced Topics
+Object-Oriented Programming (OOP)
+Classes and Objects
+Constructor
+Inheritance
+Encapsulation
+ES6+ Features
+Template Literals
+Modules and Import/Export
+Rest and Spread Operators
+Optional Chaining
+Closures and Lexical Scope
+Higher-Order Functions
+Event Loop and Asynchronous Programming
+Prototype and Prototypal Inheritance
+Currying
+Debouncing and Throttling
+Web APIs
+Web Workers and Service Workers
+✅ Extra Concepts for Web Development
+DOM Manipulation
+BOM (Browser Object Model)
+AJAX (Asynchronous JavaScript and XML)
+REST API Integration
+Error Handling and Debugging
+Node.js Basics
+NPM and Yarn
+Webpack and Babel
+
+
+///////////////
+API create server : npm i - g json - server
+API create : json-server --watch js.json
