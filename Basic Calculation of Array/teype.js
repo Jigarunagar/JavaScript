@@ -54,7 +54,6 @@ let slicedNumbers = numbers1.slice(2);
 console.log(slicedNumbers); // Output: [30, 40, 50]
 
 // 7.sort
-
 let numbers2 = [40, 100, 1, 5, 25, 10];
 
 // Ascending order
