@@ -1,0 +1,135 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Countdown & Quotes App</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #countdown {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+    }
+
+    #countdown div {
+      background: #007bff;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 100px;
+    }
+
+    #countdown span {
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    .quote-box {
+      margin-top: 30px;
+    }
+
+    #quote {
+      font-size: 20px;
+      margin: 20px;
+      color: #333;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Countdown to New Year</h1>
+    <div id="countdown">
+      <div><span id="days">0</span>
+        <p>Days</p>
+      </div>
+      <div><span id="hours">0</span>
+        <p>Hours</p>
+      </div>
+      <div><span id="minutes">0</span>
+        <p>Minutes</p>
+      </div>
+      <div><span id="seconds">0</span>
+        <p>Seconds</p>
+      </div>
+    </div>
+
+    <div class="quote-box">
+      <h2> Quote of the Moment</h2>
+      <p id="quote">Loading quote...</p>
+      <button onclick="showRandomQuote()">Next Quote</button>
+    </div>
+  </div>
+
+  <script>
+
+    const targetDate = new Date("January 1, 2026 00:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = days;
+      document.getElementById("hours").innerText = hours;
+      document.getElementById("minutes").innerText = minutes;
+      document.getElementById("seconds").innerText = seconds;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    const quotes = [
+      "Success is not final; failure is not fatal: It is the courage to continue that counts.",
+      "Believe in yourself and all that you are.",
+      "Every moment is a fresh beginning.",
+      "Don't wait for opportunity. Create it.",
+      "Dream it. Wish it. Do it.",
+      "Push yourself, because no one else is going to do it for you.",
+      "Doubt kills more dreams than failure ever will.",
+      "Hardships often prepare ordinary people for an extraordinary destiny.",
+      "Success doesn’t come to you. You go to it."
+    ];
+
+    function showRandomQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      document.getElementById("quote").innerText = quotes[randomIndex];
+    }
+    showRandomQuote();
+  </script>
+</body>
+
+</html>
