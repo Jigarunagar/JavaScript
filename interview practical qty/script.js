@@ -109,7 +109,7 @@ function findMaxMin(arr) {
   return { max, min };
 }
 
-// Example:
+
 let arr = [4, 3, -7, 6, -2];
 let result = findMaxMin(arr);
 console.log("Max:", result.max); 
@@ -124,7 +124,7 @@ function linearSearch(arr, target) {
   return -1;
 }
 
-// // Example
+
 let nums = [10, 5, 7, 3, 8];
 console.log(linearSearch(nums, 7)); 
 console.log(linearSearch(nums, 11)); 
@@ -146,7 +146,6 @@ function binarySearch(arr, target) {
   return -1; 
 }
 
-// Example
 let sortedArr = [1, 3, 5, 7, 9, 11];
 console.log(binarySearch(sortedArr, 7));  
 console.log(binarySearch(sortedArr, 6)); 
