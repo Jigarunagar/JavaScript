@@ -1,4 +1,3 @@
-
 //  Palindrome number
 function isPalindrome(num) {
   let str = num.toString();
@@ -11,7 +10,7 @@ function isPalindrome(num) {
 }
 
 console.log(isPalindrome(123321));
-console.log(isPalindrome(12345)); 
+console.log(isPalindrome(12345));
 
 // Reversed String
 function reverseString(str) {
@@ -48,7 +47,7 @@ function isPrime(num) {
   return true;
 }
 
-console.log(isPrime(7)); 
+console.log(isPrime(7));
 console.log(isPrime(10));
 
 // Count the Occurrence of Each number in a Array
@@ -61,7 +60,7 @@ function countChars(str) {
   return count;
 }
 
-console.log(countChars("hello")); 
+console.log(countChars("hello"));
 
 // 7 : - fibonacci series
 function fibonacci(n) {
@@ -72,7 +71,7 @@ function fibonacci(n) {
   return fib;
 }
 
-console.log(fibonacci(7)); 
+console.log(fibonacci(7));
 
 // 8 : - Find First Non-Repeated Character in a String
 // Problem: Given a string, find the first character that is not repeated.
@@ -109,43 +108,19 @@ function findMaxMin(arr) {
   return { max, min };
 }
 
-
 let arr = [4, 3, -7, 6, -2];
 let result = findMaxMin(arr);
-console.log("Max:", result.max); 
-console.log("Min:", result.min); 
+console.log("Max:", result.max);
+console.log("Min:", result.min);
 
-
-// linearSearch
-function linearSearch(arr, target) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === target) return i;
+let one = "hello welcome to javascript";
+let two = "";
+for (let i = 0; i < one.length; i++) {
+  if (i === 0 || one[i - 1] === " ") {
+    two += one[i].toUpperCase();
+  } else {
+    two += one[i];
   }
-  return -1;
 }
+console.log(two);
 
-
-let nums = [10, 5, 7, 3, 8];
-console.log(linearSearch(nums, 7)); 
-console.log(linearSearch(nums, 11)); 
-
-
-// binarySearch
-function binarySearch(arr, target) {
-  let left = 0;
-  let right = arr.length - 1;
-
-  while (left <= right) {
-    let mid = Math.floor((left + right) / 2);
-
-    if (arr[mid] === target) return mid;
-    else if (arr[mid] < target) left = mid + 1;
-    else right = mid - 1;
-  }
-
-  return -1; 
-}
-
-let sortedArr = [1, 3, 5, 7, 9, 11];
-console.log(binarySearch(sortedArr, 7));  
-console.log(binarySearch(sortedArr, 6)); 
