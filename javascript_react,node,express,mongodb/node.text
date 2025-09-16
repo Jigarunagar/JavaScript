@@ -168,10 +168,17 @@ Methods → JSON.stringify() (Object → JSON) और JSON.parse() (JSON → Obj
 Modern JS में callback का improved version।
 👉 Promise object represent करता है future value (fulfilled, rejected, pending)।
 
-////React.js//
+////React.js///////////////////////////////////////
 React.js एक JavaScript library है जो UI बनाने के लिए use होती है।
 ये component-based, virtual DOM, और JSX features provide करता है।
 Specially Single Page Applications बनाने में काम आता है।
+
+/////Components//
+React में components छोटे-छोटे reusable blocks होते हैं जिनसे पूरा UI (User Interface) बनाया जाता है।
+
+/////Props///
+Props मतलब properties।
+ये component को data pass करने का तरीका है।
 
 ////Virtual DOM///
 Virtual DOM → Real DOM का lightweight copy है।
@@ -202,4 +209,115 @@ useCallback: function को memoize करता है ताकि हर ren
 
 Custom Hook क्या होता है?
 जब हम दो या ज्यादा components में same logic बार-बार use कर रहे हों, तो उसे अलग निकालकर custom hook बनाते हैं।
+
+//// folder name
+React: Mainly Component-based architecture + Flux/Redux for state management.
+Node.js: Mainly MVC or Microservices architecture for backend API and server structure.
+
+MVC (Model-View-Controller)
+Use: Web applications, जहाँ data को अलग-अलग layers में organize करना होता है।
+Example: Django (Python), Ruby on Rails (Ruby)
+
+MVVM (Model-View-ViewModel)
+Use: Applications with complex UI logic, जैसे कि desktop और mobile apps।
+Example: Angular (काफी हद तक), WPF (Windows)
+
+MVP (Model-View-Presenter)
+Use: Applications जहाँ UI logic को अलग रखना हो, अक्सर mobile apps में इस्तेमाल होता है।
+Example: Android apps
+//// Axios
+"Axios एक popular JavaScript library है जो HTTP requests (GET, POST, PUT, DELETE)
+ करने के लिए use होती है। इसे React में API से data fetch या send करने के लिए आसानी से use किया जा सकता है।"
+
+///////// node ///////////////////////////////// 
+
+///////Node.js Architecture
+"Node.js एक event-driven, non-blocking I/O runtime है जो high-performance और
+ scalable server applications बनाने के लिए use होता है। इसके architecture में 
+ single-threaded event loop और callback mechanism के माध्यम से asynchronous operations handle होते हैं।"
+
+//////Node.js Event Loop
+"Node.js Event Loop एक single-threaded mechanism है जो asynchronous operations 
+(I/O, timers, network requests) को efficiently handle करता है। यह non-blocking architecture का core है,
+ जिससे Node.js high-performance और scalable applications बना सकता है।"
+
+////// Asynchronous
+1️⃣ Node.js Asynchronous:
+"Node.js asynchronous है, यानी operations (I/O, file read/write, API calls) non-blocking तरीके से चलते हैं।
+ इससे server high-performance और scalable बनता है।"
+2️⃣ Node.js Promises:
+"Promises asynchronous operations को handle करने का modern तरीका है,
+ जो callback के बजाय success (.then) और error (.catch) manage करता है।"
+3️⃣ Node.js Async/Await:
+"async/await Promises को आसान और synchronous जैसा दिखने वाला तरीके से handle करने का syntax है। 
+इससे code readable और maintainable बनता है।"
+4️⃣ Node.js Error Handling:
+"Node.js में error handling callback, try/catch, और Promise .catch() के माध्यम से की जाती है। 
+यह server crashes से बचाता है और errors को proper manage करता है।"
+
+/////// modules Basics
+1️⃣ Node.js Modules:
+"Modules Node.js में code को अलग-अलग files में organize करने का तरीका हैं। require() या import से इन्हें reuse किया जा सकता है।"
+2️⃣ Node.js ES Modules:
+"ES Modules (import/export) modern JavaScript standard है, जो modules को structured और readable तरीके से use करने देता है।"
+3️⃣ Node.js NPM:
+"NPM (Node Package Manager) Node.js packages को install, manage और share करने का tool है।"
+4️⃣ Node.js package.json:
+"package.json project का metadata file है, जिसमें dependencies, scripts और project info store होती है।"
+5️⃣ Node.js NPM Scripts:
+"NPM scripts package.json में defined commands हैं, जैसे start, build, test, जो project automation में use होती हैं।"
+6️⃣ Node.js Managing Dependencies:
+"NPM dependencies install, update और uninstall करने का easy तरीका देता है। यह project को maintainable बनाता है।"
+7️⃣ Node.js Publish a Package:
+"NPM पर package publish करने से code community या projects में reuse के लिए available हो जाता है।"
+
+////////// Core modules
+1️⃣ Node.js HTTP Module:
+"HTTP module Node.js में web server और client बनाने के लिए use होता है। इसके माध्यम से requests और responses handle किए जाते हैं।"
+2️⃣ Node.js HTTPS Module:
+"HTTPS module HTTP का secure version है, जो SSL/TLS encryption के साथ data transfer करता है।"
+3️⃣ Node.js Path Module:
+"Path module file और directory paths को handle करने के लिए use होता है। यह path join, resolve और normalize करने में मदद करता है।"
+4️⃣ Node.js URL Module:
+"URL module URLs को parse और format करने के लिए use होता है। यह query parameters और protocol आसानी से manage करता है।"
+5️⃣ Node.js File System (fs) Module:
+"FS module files और directories को read, write, update और delete करने के लिए use होता है। यह synchronous और asynchronous दोनों methods provide करता है।"
+6️⃣ Node.js OS Module:
+"OS module system information जैसे CPU, memory, network interfaces और OS type provide करता है। यह server performance check में useful है।"
+
+////////// Middleware
+"Middleware functions Express.js में वो functions होते हैं जो request और response के बीच execute होते हैं।
+ ये authentication, logging, error handling और data parsing जैसी tasks handle करने के लिए use होते हैं।
+
+////////// Node.js RESTful API
+"RESTful API Node.js में web services create करने का तरीका है
+जो HTTP methods (GET, POST, PUT, DELETE) का use करके client-server communication handle करता है।
+यह stateless architecture follow करता है और scalable applications के लिए ideal है।"
+///////////What is API Authentication
+"API Authentication वह process है जिससे server यह verify करता है 
+कि incoming request authorized user से आ रही है। यह API keys, tokens (JWT), 
+OAuth या username/password के माध्यम से किया जाता है।"
+
+///////////// helmet , Multer
+1️⃣ Helmet:
+"Helmet एक Node.js middleware है जो HTTP headers set करके application को 
+security threats (जैसे XSS, clickjacking) से बचाता है।
+ Express.js apps में security बढ़ाने के लिए use होता है।"
+2️⃣ Multer:
+"Multer एक Node.js middleware है जो Express.js में file uploads handle करने के लिए use होता है।
+ यह multipart/form-data forms से images, documents आसानी से store करता है।"
+
+////// WebSockets , Socket.IO
+1️⃣ Node.js WebSockets:
+"WebSockets एक protocol है जो client और server के बीच 
+real-time, full-duplex communication allow करता है। यह HTTP की तरह request-response नहीं"
+2️⃣ Node.js Socket.IO:
+"Socket.IO Node.js library है जो WebSockets को आसान और reliable तरीके से implement करती है। 
+यह real-time communication, events और fallback mechanisms (जैसे polling) support करती है।"
+
+//////express///////////////////////////////
+Express.js:
+"Express.js Node.js का lightweight web framework है 
+जो APIs, routing और middleware handle करने में आसान बनाता है। 
+यह Node.js applications को fast और structured बनाने के लिए use होता है।"
 
