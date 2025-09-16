@@ -298,7 +298,7 @@ Example: Android apps
 कि incoming request authorized user से आ रही है। यह API keys, tokens (JWT), 
 OAuth या username/password के माध्यम से किया जाता है।"
 
-///////////// helmet , Multer
+///////////// helmet , Multer , Morgan , JSON Web Token , Cookie-Parser
 1️⃣ Helmet:
 "Helmet एक Node.js middleware है जो HTTP headers set करके application को 
 security threats (जैसे XSS, clickjacking) से बचाता है।
@@ -306,6 +306,15 @@ security threats (जैसे XSS, clickjacking) से बचाता है�
 2️⃣ Multer:
 "Multer एक Node.js middleware है जो Express.js में file uploads handle करने के लिए use होता है।
  यह multipart/form-data forms से images, documents आसानी से store करता है।"
+1️⃣ Morgan:
+"Morgan एक HTTP request logger middleware है जो Express.js apps 
+में incoming requests को log करता है। यह debugging और monitoring के लिए useful है।"
+2️⃣ JSON Web Token (JWT):
+"JWT एक token-based authentication method है जो client और server के
+ बीच user identity को securely transmit करता है। यह stateless authentication के लिए use होता है।"
+3️⃣ Cookie-Parser:
+"Cookie-Parser Express.js middleware है जो cookies को parse करके req.cookies 
+object में available कराता है। यह authentication और sessions में use होता है।"
 
 ////// WebSockets , Socket.IO
 1️⃣ Node.js WebSockets:
