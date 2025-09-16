@@ -1,4 +1,4 @@
-function
+///// function //////
 Function क्या है?
 👉 Function एक reusable block of code है जो किसी काम को करने के लिए लिखा जाता है। इसे call करके बार-बार use किया जा सकता है।
 
@@ -78,4 +78,128 @@ Function vs Method में अंतर?
 👉 Function independent code block होता है, जबकि method किसी object का function होता है।
 const obj={say(){ return "Hello"; }}; obj.say();
 
+///// Array Methods /////////
+
+push() → Add element end में
+pop() → Remove element end से
+shift() → Remove element start से
+unshift() → Add element start में
+concat() → दो arrays जोड़ना
+slice() → copy part of array
+splice() → add/remove elements
+forEach() → loop through array
+map() → नया array return करता है
+filter() → condition वाला नया array
+reduce() → single value में reduce
+find() → पहला matching element
+includes() → check element present है या नहीं
+
+//////// Event //////
+Event Types (Important for Interview)
+Mouse Events → onclick, ondblclick, onmouseover, onmouseout
+Keyboard Events → onkeydown, onkeyup, onkeypress
+Form Events → onsubmit, onchange, onfocus, onblur
+Window Events → onload, onresize, onscroll
+
+///////////////Loops in JavaScript //////
+Loop का मतलब है बार-बार code चलाना जब तक कोई condition true है।
+ये repetitive काम आसान और छोटा कर देता है।
+
+for loop
+जब हमें पहले से पता हो कि कितनी बार loop चलाना है।
+
+while loop
+पहले condition check करता है, फिर block execute करता है।
+
+do...while loop
+कम से कम एक बार जरूर चलेगा, फिर condition check करेगा।
+
+for...of loop
+पहले body run होती है, फिर condition check।
+
+for...of loop
+for...of directly values पर iterate करता है।
+
+for...in loop
+for...in keys पर iterate करता है, values access करने के लिए obj[key] use करते हैं।
+
+forEach loop
+forEach array के हर element पर function apply करता है।
+
+///////// Throw, and Try...Catch...Finally
+throw का use manually error generate करने के लिए होता है।
+try...catch 
+Error आने पर program को रोकने के बजाय safe तरीके से handle करता है।
+finally
+finally block हमेशा चलेगा, चाहे error आए या ना आए।
+
+/////// Global scope , Function scope , Block scope
+Global Scope → variable पूरे program में accessible।
+Function Scope → variable सिर्फ function के अंदर accessible।
+Block Scope → { } के अंदर declared variable बाहर accessible नहीं (let/const)।
+
+///// map , filter ,forEach
+map() → हर element transform करके नया array return करता है।
+filter() → condition वाले elements का नया array return करता है।
+forEach() → सिर्फ loop चलाता है, कोई नया array return नहीं करता।
+
+////// Async await
+async function हमेशा Promise return करता है।
+इसके अंदर await use कर सकते हैं → जो promise resolve होने तक wait करता है।
+Asynchronous code को पढ़ना और लिखना आसान बनाता है।
+
+////// Synchronous Asynchronous //
+Synchronous → Code sequentially चलता है, हर statement अगले का इंतज़ार करता है।
+Asynchronous → कुछ काम background में होता है, बाकी code बिना रुके चलता रहता है।
+JavaScript single-threaded है, लेकिन asynchronous काम करने के लिए event loop और callback queue का use करती है।
+
+///// web api
+Web APIs (Application Programming Interfaces) browser द्वारा दिए गए built-in features होते हैं, जिनका use हम JavaScript से करते हैं।
+ये APIs हमें browser और web environment से interact करने की power देती हैं।
+JavaScript खुद में बहुत छोटा language है, लेकिन Web APIs की वजह से powerful बनता है।
+
+//////JSON
+JSON एक lightweight data format है जो client और server के बीच data exchange के लिए use होता है।
+Format → key-value pairs (text-based, easy to read/write)।
+Use → API responses, configuration, data storage।
+Methods → JSON.stringify() (Object → JSON) और JSON.parse() (JSON → Object)।
+
+//// Promise
+Modern JS में callback का improved version।
+👉 Promise object represent करता है future value (fulfilled, rejected, pending)।
+
+////React.js//
+React.js एक JavaScript library है जो UI बनाने के लिए use होती है।
+ये component-based, virtual DOM, और JSX features provide करता है।
+Specially Single Page Applications बनाने में काम आता है।
+
+////Virtual DOM///
+Virtual DOM → Real DOM का lightweight copy है।
+React पहले Virtual DOM update करता है, फिर diff करके सिर्फ़ necessary changes Real DOM में apply करता है।
+इससे UI updates fast और efficient बनते हैं।
+
+/////React Hooks//
+React Hooks क्या हैं?
+React Hooks ऐसे functions हैं जो हमें state और lifecycle features को functional components में use करने की सुविधा देते हैं।
+Earlier class component में state & lifecycle होते थे, लेकिन hooks से functional components powerful बन गए।
+
+useState Hook क्या करता है?
+useState component के अंदर state manage करने के लिए use होता है।
+
+useEffect Hook का use क्यों करते हैं?
+useEffect side effects handle करने के लिए use होता है जैसे – API call करना, data fetch करना, DOM update करना subscription लगाना/हटाना।
+
+useContext Hook क्यों?
+Prop drilling से बचने के लिए।
+अगर हमें parent से child तक props बार-बार pass नहीं करना, तो हम useContext का use करते हैं।
+
+useReducer
+useReducer तब use होता है जब state complex हो और multiple conditions हों (जैसे form handling या बड़े data management)।
+
+useMemo और useCallback क्यों?
+useMemo: किसी calculation को बार-बार run होने से बचाता है, सिर्फ dependencies बदलें तब ही calculation करेगा। (Performance optimization)
+useCallback: function को memoize करता है ताकि हर render पर नया function ना बने।
+
+Custom Hook क्या होता है?
+जब हम दो या ज्यादा components में same logic बार-बार use कर रहे हों, तो उसे अलग निकालकर custom hook बनाते हैं।
 
