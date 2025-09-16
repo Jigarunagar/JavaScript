@@ -1,0 +1,81 @@
+function
+Function क्या है?
+👉 Function एक reusable block of code है जो किसी काम को करने के लिए लिखा जाता है। इसे call करके बार-बार use किया जा सकता है।
+
+Function Declaration क्या है?
+👉 जब हम function name() {} लिखते हैं तो उसे function declaration कहते हैं। यह hoisting के कारण पहले से available होता है।
+: function add(a,b){ return a+b; }
+
+Function Expression क्या है?
+👉 Function को किसी variable में store करना function expression कहलाता है। यह hoisting नहीं होता।
+: const sub = function(a,b){ return a-b; };
+
+Arrow Function क्या है?
+👉 ES6 में आया shorthand syntax ( ) => { } arrow function कहलाता है। इसमें this lexical scope inherit करता है।
+const mul = (a,b) => a*b;
+
+Anonymous Function क्या है?
+👉 ऐसा function जिसका नाम नहीं होता उसे anonymous function कहते हैं। इसे अक्सर callback के रूप में use किया जाता है।
+setTimeout(function(){ console.log("Hello"); },1000);
+
+IIFE (Immediately Invoked Function Expression) क्या है?
+👉 ऐसा function जो define होते ही execute हो जाए उसे IIFE कहते हैं। Syntax: (function(){})();
+(function(){ console.log("Run Now"); })();
+
+Callback Function क्या है?
+👉 जब कोई function दूसरे function में argument के रूप में पास किया जाता है और बाद में execute होता है, तो उसे callback कहते हैं।
+function greet(cb){ cb(); } greet(()=>console.log("Hi"));
+
+Recursive Function क्या है?
+👉 जब कोई function खुद को ही call करता है तो उसे recursive function कहते हैं। इसका use factorial, fibonacci जैसी problems में होता है।
+function fact(n){ return n<=1?1:n*fact(n-1); }
+
+Higher Order Function क्या है?
+👉 ऐसा function जो function को argument ले सकता है या function return कर सकता है उसे higher order function कहते हैं।
+function hof(fn){ return fn(5); } hof(x=>x*2);
+
+First Class Function क्या है?
+👉 जब function को variable में assign किया जा सके, return किया जा सके या argument में pass किया जा सके तो उसे first class function कहते हैं।
+const say = ()=>"Hello"; const call = say; console.log(call());
+
+Pure Function क्या है?
+👉 ऐसा function जिसका output सिर्फ उसके input पर depend करे और side effect न करे, उसे pure function कहते हैं।
+function square(x){ return x*x; }
+
+Default Parameter क्या है?
+👉 Function में parameter को default value देना default parameter कहलाता है। जैसे: function test(x=10){}
+function greet(name="User"){ return "Hi "+name; }
+
+Rest Parameter क्या है?
+👉 जब function में multiple arguments को array की तरह collect किया जाता है तो उसे rest parameter कहते हैं (...args)।
+function sum(...nums){ return nums.reduce((a,b)=>a+b); }
+
+Arguments Object क्या है?
+👉 Function में पास हुए सभी arguments arguments object में store होते हैं। Arrow function में यह available नहीं होता।
+function show(){ console.log(arguments[0]); } show("Hi");
+
+Closures क्या होते हैं?
+👉 जब कोई inner function अपने outer function के variables को access करता है, तो उसे closure कहते हैं।
+function outer(){ let x=10; return ()=>x; }
+
+Constructor Function क्या है?
+👉 Object बनाने के लिए function को constructor की तरह use किया जाता है। Syntax: function Person(){ this.name=""; }
+function Person(n){ this.name=n; } let p=new Person("Ram");
+
+Generator Function क्या है?
+👉 Generator function को function* से declare किया जाता है और यह execution को pause/resume कर सकता है।
+function* gen(){ yield 1; yield 2; } console.log([...gen()]);
+
+Async Function क्या है?
+👉 Async function हमेशा promise return करता है और इसके अंदर await keyword use कर सकते हैं।
+async function fetchData(){ return "Data"; }
+
+Hoisting Function में कैसे काम करता है?
+👉 Function declaration hoist होते हैं यानी code में पहले use किए जा सकते हैं। लेकिन function expression hoist नहीं होता।
+test(); function test(){ console.log("Hoisted"); }
+
+Function vs Method में अंतर?
+👉 Function independent code block होता है, जबकि method किसी object का function होता है।
+const obj={say(){ return "Hello"; }}; obj.say();
+
+
